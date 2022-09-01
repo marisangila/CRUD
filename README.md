@@ -7,8 +7,8 @@ Aplicação deve ter no mínimo os seguintes itens:
 - 3 CRUD (CREATE, READ, UPDATE, DELETE)
   - Inserir (INSERT INTO), Visualizar(SELECT), Editar(UPDATE) e Excluir(DELETE)
 - 2 relatórios:
-  - Visualização realizando select em múltiplas tabelas (JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN)
-- A Aplicação de ter layout responsivo
+  - Visualização realizando SELECT em múltiplas tabelas (JOIN, INNER JOIN, LEFT JOIN, RIGHT JOIN)
+- A Aplicação deve ter layout responsivo
 
 
 Documentação:
