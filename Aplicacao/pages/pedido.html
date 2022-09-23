@@ -1,44 +1,157 @@
-<!DOCTYPE html5>
+<!DOCTYPE html>
+<html>
+
 <head>
-<title>Delivery</title>
-
+    <title>Delivery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
 </head>
-<body>
-    <input type="search">
 
-    <table border="1">
-        <thead>
-            <tr>
-                <th>Código</th>
-                <th>Cliente</th>
-                <th>Endereço</th>
-                <th>Valor Total</th>
-                <th>Estado</th>
-                <th>Editar</th>
-            </tr>
-        </thead>
-        <tbody>
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary navbar-expand-md  mx-auto">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="cardapio.html">Inicio</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="meus_pedidos.html">Meus Pedidos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="pedido.html">Pedidos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="produto.html">Produto</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+              aria-controls="staticBackdrop">
+              Minha Conta
+            </button>
+          </ul>
+    </nav>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-centers">
+            <div class="col-md-8 mt-5">
+                <div class="table-responsive-sm">
+                    <table class="table table-striped table-hover table-bordered table-primary">
+                        <thead>
+                            <tr>
+                                <th class="text-center align-middle">
+                                    Código
+                                </th>
+                                <th class="text-center align-middle">
+                                    Cliente
+                                </th>
+                                <th class="text-center align-middle">
+                                    Endereço
+                                </th>
+                                <th class="text-center align-middle">
+                                    Valor Total
+                                </th>
+                                <th class="text-center align-middle">
+                                    Estado
+                                </th>
+                                <th class="text-center align-middle">
+                                    <input class="btn btn-secondary" type="button" value="Editar">
+                                </th>
+                                <th class="text-center align-middle">
+                                    <input class="btn btn-danger" type="button" value="Excluir">
+                                </th>
+                                <th class="text-center align-middle">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Visualizar
+                                    </button>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center align-middle">
+                                    TESTE
+                                </td>
+                                <td class="text-center align-middle">
+                                    TESTE
+                                </td>
+                                <td class="text-center align-middle">
+                                    TESTE
+                                </td>
+                                <td class="text-center align-middle">
+                                    TESTE
+                                </td>
+                                <td class="text-center align-middle">
+                                    TESTE
+                                </td>
+                                <td class="text-center align-middle">
+                                    <input class="btn btn-secondary" type="button" value="Editar">
+                                </td>
+                                <td class="text-center align-middle">
+                                    <input class="btn btn-danger" type="button" value="Excluir">
+                                </td>
+                                <td class="text-center align-middle">
+                                    <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                        data-bs-target="#exampleModal">
+                                        Visualizar
+                                    </button>
 
-        </tbody>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
 
-</table>
-
-    <div>
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>Código</th>
-                    <th>Imagem</th>
-                    <th>Nome</th>
-                    <th>Tamanho</th>
-                    <th>Quantidade</th>
-                    <th>Observações</th>
-                </tr>
-            </thead>
-            <tbody>
-    
-            </tbody>  
-        </table>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"></h5>Detalhes do Pedido</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div table-responsive-sm>
+                        <table class="table table-striped table-hover table-bordered table-primary">
+                            <thead>
+                                <tr>
+                                    <th class="text-center align-middle">
+                                        Código
+                                    </th>
+                                    <th class="text-center align-middle">
+                                        Imagem
+                                    </th>
+                                    <th class="text-center align-middle">
+                                        Nome
+                                    </th>
+                                    <th class="text-center align-middle">
+                                        Tamanho
+                                    </th>
+                                    <th class="text-center align-middle">
+                                        Quantidade
+                                    </th>
+                                    <th class="text-center align-middle">
+                                        Observações
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
+
 </html>

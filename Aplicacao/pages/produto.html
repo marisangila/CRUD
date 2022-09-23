@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Delivery</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+
+<body class="bg-light">
+    <nav class="navbar navbar-dark bg-primary navbar-expand-md  mx-auto">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="cardapio.html">Inicio</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="meus_pedidos.html">Meus Pedidos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="pedido.html">Pedidos</a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="produto.html">Produto</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop"
+              aria-controls="staticBackdrop">
+              Minha Conta
+            </button>
+          </ul>
+    </nav>
+    <div class="container-fluid mt-5">
+        <div class="row justify-content-center align-items-center">
+            <div class="col-md-2">
+                <img class="img-fluid  img-thumbnail m-2" src="../images/camera.png" style="height: 200px;width:200px">
+            </div>
+            <div class="col-md-4">
+                <Label>Nome:</Label>
+                <input class="form-control" type="text">
+                <div class="form-group shadow-textarea">
+                    <label>Descrição:</label>
+                    <textarea class="form-control z-depth-1" rows="4" placeholder="Descreva o produto..."></textarea>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <Label>Tamanho:</Label>
+                <input class="form-control" type="text">
+                <Label>Preço:</Label>
+                <input class="form-control" type="text">
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-centers mt-5">
+            <div class="col-mx-auto">
+                <input type="button" value="Cadastar" class="btn btn-primary px-5">
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-centers">
+            <div class="col-md-8 mt-5">
+                <div class="table-responsive-sm">
+                    <table class="table table-striped table-hover table-bordered table-primary">
+                        <thead>
+                            <tr>
+                                <th class="text-center align-middle">
+                                    <img src="..." class="img-fluid" alt="">
+                                </th>
+                                <th class="text-center align-middle">
+                                    Nome
+                                </th>
+                                <th class="text-center align-middle">
+                                    Descrição
+                                </th>
+                                <th class="text-center align-middle">
+                                    Tamanho
+                                </th>
+                                <th class="text-center align-middle">
+                                    Preço
+                                </th>
+                                <th class="text-center align-middle">
+                                    <input class="btn btn-secondary" type="button" value="Editar">
+                                </th>
+                                <th class="text-center align-middle">
+                                    <input class="btn btn-danger" type="button" value="Excluir">
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

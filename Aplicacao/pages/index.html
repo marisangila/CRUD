@@ -1,15 +1,55 @@
 <!DOCTYPE html>
-<head>
-<title>Delivery</title>
+<html>
 
+<head>
+  <title>Delivery</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"></script>
+
+
+  <link rel="stylesheet" type="text/css" href="../css/estilos.css" />
+  <!--<link rel="stylesheet" href="../bootstrap/compilado/bootstrap.css" />-->
 </head>
-<body>
-<nav>
-    <a href="cadastrar.html">Cadastrar-se</a>
-    <br>
-    <a href="login.html">Acessar</a>
-    <br>
-</nav>
-<img src="../source/logo.png" alt="Delivery">
+
+<body class="bg-light">
+  <nav class="navbar navbar-dark bg-primary navbar-expand-md  mx-auto">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" href="cadastrar.html">Cadastrar-se</a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="login.html">Acessar</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container-fluid">
+    <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="../images/main.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../images/main.png" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="../images/main.png" class="d-block w-100" alt="...">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Próximo</span>
+      </button>
+    </div>
+  </div>
 </body>
+
 </html>
