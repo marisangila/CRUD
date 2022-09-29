@@ -31,7 +31,7 @@
     <div class="container-fluid mt-5">
         <div class="card shadow-lg p-3 mx-5 bg-body rounded">
             <div class="card-body">
-                <form action="../source/insert_user.php" method="POST">
+                <form action="../source/insert.php" method="POST">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-md-4">
                             <Label>Nome:</Label>
