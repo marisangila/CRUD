@@ -1,3 +1,10 @@
+<?php
+        include("conect.php");
+
+        $query = $pdo->prepare("SELECT nome_usuario, sobrenome_usuario, email_usuario, celular_usuario, senha_usuario FROM USUARIO");
+        $query->execute();
+        $data = $query->fetch();
+    ?>
 <!DOCTYPE html>
 <html>
 
@@ -24,7 +31,7 @@
     <div class="container-fluid mt-5">
         <div class="card shadow-lg p-3 mx-5 bg-body rounded">
             <div class="card-body">
-                <form action="../source/insert.php" method="post">
+                <form action="../source/insert_user.php" method="POST">
                     <div class="row justify-content-center align-items-center">
                         <div class="col-md-4">
                             <Label>Nome:</Label>
@@ -34,15 +41,15 @@
                             <input class="form-control" type="email" name="email">
                             <br>
                             <Label>Crie uma senha:</Label>
-                            <input class="form-control" type="password">
+                            <input class="form-control" type="password" name="password">
                             <br>
                         </div>
                         <div class="col-md-4">
                             <Label>Sobrenome:</Label>
-                            <input class="form-control" type="text">
+                            <input class="form-control" type="text" name="lastname">
                             <br>
                             <Label>Celular:</Label>
-                            <input class="form-control" type="text">
+                            <input class="form-control" type="text" name="phone">
                             <br>
                             <Label>Confirme sua senha:</Label>
                             <input class="form-control" type="password">
@@ -84,6 +91,15 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                                echo "
+                                    <tr>
+                                        <td>
+                                            $query.['nome_usuario']
+                                        </td>
+                                    </tr>
+                                "
+                            ?>
                         </tbody>
                     </table>
                 </div>
