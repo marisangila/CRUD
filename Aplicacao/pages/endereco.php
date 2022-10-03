@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.html");
+        exit;
+    }
+?>
 <!DOCTYPE html>
 <html>
 
@@ -16,10 +23,10 @@
   <nav class="navbar navbar-dark bg-primary navbar-expand-md  mx-auto">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="cardapio.html">Inicio</a>
+        <a class="nav-link" href="cardapio.php">Inicio</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="meus_pedidos.html">Meus Pedidos</a>
+        <a class="nav-link" href="meus_pedidos.php">Meus Pedidos</a>
       </li>
     </ul>
     <ul class="navbar-nav ms-auto">
@@ -38,13 +45,13 @@
   <div class="offcanvas-body">
     <ul class="nav flex-column mb-auto">
       <li class="nav-item">
-        <a href="endereco.html" class="btn btn-link" aria-current="page">
+        <a href="endereco.php" class="btn btn-link" aria-current="page">
           <img src="../images/icons/location.png" height="20px" width="20px">
           Endereço
         </a>
       </li>
       <li class="nav-item">
-        <a href="cartao.html" class="btn btn-link" aria-current="page">
+        <a href="cartao.php" class="btn btn-link" aria-current="page">
           <img src="../images/icons/credit-card.png" height="20px" width="20px">
           Forma de Pagamento
         </a>

@@ -1,10 +1,18 @@
+<?php
+    session_start();
+    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+        header("location: login.html");
+        exit;
+    }
+?>
+
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>Delivery</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="wfaviconidth=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
@@ -15,23 +23,20 @@
 <body class="bg-light">
   <nav class="navbar navbar-dark bg-primary navbar-expand-md  mx-auto">
     <ul class="navbar-nav ">
-      <!--
       <li class="nav-item active">
-        <a class="nav-link" href="endereco.html">Endereço</a>
+        <a class="nav-link" href="meus_pedidos.php">Meus Pedidos</a>
       </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="cartao.html">Forma de Pagamento</a>
-      </li>
-      -->
-      <li class="nav-item active">
-        <a class="nav-link" href="meus_pedidos.html">Meus Pedidos</a>
-      </li>
-      <li class="nav-item active">
-        <a class="nav-link" href="pedido.html">Pedidos</a>
-      </li>
-      <li class="nav-item active ">
-        <a class="nav-link" href="produto.html">Cadastrar Item</a>
-      </li>
+      <?php
+        if ($_SESSION['is_adm_usuario'] == 1) {
+          echo 
+        '<li class="nav-item active">
+            <a class="nav-link" href="pedido.php">Pedidos</a>
+        </li>
+        <li class="nav-item active ">
+          <a class="nav-link" href="produto.php">Cadastrar Item</a>
+        </li>';
+        };
+      ?>
     </ul>
     <ul class="navbar-nav ms-auto">
       <a class="btn btn-outline-light" data-bs-toggle="offcanvas" href="#menu" role="button">
@@ -49,13 +54,13 @@
     <div class="offcanvas-body">
       <ul class="nav flex-column mb-auto">
         <li class="nav-item">
-          <a href="endereco.html" class="btn btn-link" aria-current="page">
+          <a href="endereco.php" class="btn btn-link" aria-current="page">
             <img src="../images/icons/location.png" height="20px" width="20px">
             Endereço
           </a>
         </li>
         <li class="nav-item">
-          <a href="cartao.html" class="btn btn-link" aria-current="page">
+          <a href="cartao.php" class="btn btn-link" aria-current="page">
             <img src="../images/icons/credit-card.png" height="20px" width="20px">
             Forma de Pagamento
           </a>

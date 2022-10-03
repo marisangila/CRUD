@@ -1,17 +1,32 @@
 <?php
-include("conect.php");
+    include("conect.php");
 
-$email = $_POST["email"];
-$set_password = MD5($_POST["password"]);
+    $email = $_POST["email"];
+    $set_senha = $_POST["password"];
 
-$query = $pdo->prepare("SELECT senha_usuario FROM usuario WHERE email_usuario = :email");
-$query->bindValue(":email", $email);
-$query->execute();
-$get_password = $query->fetchColumn();
+    $query = $pdo->prepare("SELECT pk_usuario, is_adm_usuario, senha_usuario FROM usuario WHERE email_usuario = :email");
+    $query->bindValue(":email", $email);
+    $query->execute();
 
-if ($get_password == $set_password) {
-    header("Location:../pages/cardapio.html");
-} else {
-    header("Location:../pages/login.html");
-}
+    if ($query->rowCount() == 1) {
+        $result = $query->fetch();
+
+        if ($result['senha_usuario'] == MD5($set_senha)) {
+            session_start();
+
+            $_SESSION['pk_usuario'] = $result['pk_usuario'];
+            $_SESSION['senha_usuario'] = $result['senha_usuario'];
+            $_SESSION['is_adm_usuario'] = $result['is_adm_usuario'];
+            $_SESSION['loggedin'] = true;
+
+            header("Location:../pages/cardapio.php");
+        } else {
+            echo ("Email ou Senha Inválida!");
+        }
+    } else {
+        echo ("Email ou Senha Inválida!");
+    }
+
+    unset($query);
+    unset($pdo);
 ?>

@@ -16,5 +16,5 @@
 
     $comando->execute();                                                   
 
-    header("Location:../pages/cadastrar.php");
+    header("Location:../pages/cadastrar.html");
 ?>
