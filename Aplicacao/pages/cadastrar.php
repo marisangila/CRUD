@@ -58,39 +58,46 @@
                 </form>
             </div>
         </div>
-        <div class="row justify-content-center align-items-centers">
-            <div class="col-md-8 mt-5">
-                <div class="table-responsive-sm">
-                    <table class="table table-striped table-hover table-bordered table-primary">
-                        <thead>
-                            <tr>
-                                <th class="text-center align-middle">
-                                    Nome
-                                </th>
-                                <th class="text-center align-middle">
-                                    Sobrenome
-                                </th>
-                                <th class="text-center align-middle">
-                                    E-mail
-                                </th>
-                                <th class="text-center align-middle">
-                                    Celular
-                                </th>
-                                <th class="text-center align-middle">
-                                    <input class="btn btn-secondary" type="button" value="Editar">
-                                </th>
-                                <th class="text-center align-middle">
-                                    <input class="btn btn-danger" type="button" value="Excluir">
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                        </tbody>
-                    </table>
+        <?php
+        session_start();
+        if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+            if ($_SESSION['is_adm_usuario'] == 1) { ?>
+                <div class="row justify-content-center align-items-centers">
+                    <div class="col-md-8 mt-5">
+                        <div class="table-responsive-sm">
+                            <table class="table table-striped table-hover table-bordered table-primary">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center align-middle">
+                                            Nome
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            Sobrenome
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            E-mail
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            Celular
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            <input class="btn btn-secondary" type="button" value="Editar">
+                                        </th>
+                                        <th class="text-center align-middle">
+                                            <input class="btn btn-danger" type="button" value="Excluir">
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </div>
         </div>
-    </div>
+<?php }
+}
+?>
 </body>
 
 </html>

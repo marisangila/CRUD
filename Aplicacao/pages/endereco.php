@@ -1,9 +1,9 @@
 <?php
-    session_start();
-    if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-        header("location: login.html");
-        exit;
-    }
+session_start();
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+  header("location: login.html");
+  exit;
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,72 +36,71 @@
     </ul>
   </nav>
 
-  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="menu"
-  aria-labelledby="offcanvasWithBothOptionsLabel">
-  <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Minha Conta</h5>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="menu" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Minha Conta</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+      <ul class="nav flex-column mb-auto">
+        <li class="nav-item">
+          <a href="endereco.php" class="btn btn-link" aria-current="page">
+            <img src="../images/icons/location.png" height="20px" width="20px">
+            Endereço
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="cartao.php" class="btn btn-link" aria-current="page">
+            <img src="../images/icons/credit-card.png" height="20px" width="20px">
+            Forma de Pagamento
+          </a>
+        </li>
+        <li class="nav-item">
+          <a href="cadastrar.php" class="btn btn-link" aria-current="page">
+            <img src="../images/icons/user.png" height="20px" width="20px">
+            Perfil
+          </a>
+        </li>
+      </ul>
+    </div>
   </div>
-  <div class="offcanvas-body">
-    <ul class="nav flex-column mb-auto">
-      <li class="nav-item">
-        <a href="endereco.php" class="btn btn-link" aria-current="page">
-          <img src="../images/icons/location.png" height="20px" width="20px">
-          Endereço
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="cartao.php" class="btn btn-link" aria-current="page">
-          <img src="../images/icons/credit-card.png" height="20px" width="20px">
-          Forma de Pagamento
-        </a>
-      </li>
-      <li class="nav-item">
-        <a href="cadastrar.html" class="btn btn-link" aria-current="page">
-          <img src="../images/icons/user.png" height="20px" width="20px">
-          Perfil
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
 
   <div class="container-fluid m-5">
-    <form>
+    <form action="../source/insert_address.php" method="POST">
       <div class="row justify-content-center align-items-center">
         <div class="col-md-8">
           <Label>Nome:</Label>
-          <input class="form-control" type="text">
+          <input class="form-control" type="text" name="name">
         </div>
       </div>
       <div class="row justify-content-center align-items-center">
         <div class="col-md-4">
-          <Label>Rua:</Label>
-          <input class="form-control" type="text" maxlength="16">
+          <Label>Logradouro:</Label>
+          <input class="form-control" type="text" name="address">
         </div>
         <div class="col-md-2">
           <Label>Número:</Label>
-          <input class="form-control" type="text">
+          <input class="form-control" type="text" name="number">
         </div>
         <div class="col-md-2">
           <Label>Bairro:</Label>
-          <input class="form-control" type="text">
+          <input class="form-control" type="text" name="district">
         </div>
       </div>
       <div class="row justify-content-center align-items-center">
         <div class="col-md-4">
           <Label>CEP:</Label>
-          <input class="form-control" type="text">
+          <input class="form-control" type="text" name="cep">
         </div>
         <div class="col-md-4">
           <Label>Complemento:</Label>
-          <input class="form-control" type="text">
+          <input class="form-control" type="text" name="complement">
         </div>
       </div>
 
       <div class="row justify-content-center align-items-centers mt-5">
         <div class="col-mx-auto text-center">
-          <input type="button" value="Inserir" class="btn btn-primary px-5">
+          <input type="submit" value="Inserir" class="btn btn-primary px-5">
         </div>
       </div>
     </form>
@@ -124,10 +123,10 @@
                   Número
                 </th>
                 <th class="text-center align-middle">
-                  Complemento
+                  Bairro
                 </th>
                 <th class="text-center align-middle">
-                  Bairro
+                  Complemento
                 </th>
                 <th class="text-center align-middle">
                   CEP
@@ -141,6 +140,25 @@
               </tr>
             </thead>
             <tbody>
+            <?php
+            include("../source/select_address.php");
+
+            if (!empty($lst_address)) {
+                foreach ($lst_address as $row) { ?>
+                    <tr>
+                        <td class="text-center align-middle"> <?php echo $row['pk_endereco']; ?></td>
+                        <td class="text-center align-middle"> <?php echo $row['nome_endereco']; ?></td>
+                        <td class="text-center align-middle"> <?php echo $row['rua_endereco']; ?></td>
+                        <td class="text-center align-middle"> <?php echo $row['numero_endereco']; ?></td>
+                        <td class="text-center align-middle"> <?php echo $row['bairro_endereco']; ?></td>
+                        <td class="text-center align-middle"> <?php echo $row['complemento_endereco']; ?></td>
+                        <td class="text-center align-middle"> <?php echo $row['cep_endereco']; ?></td>
+                        <td class="text-center align-middle"> <?php echo '<input class="btn btn-secondary" type="button" value="Editar">'; ?></td>
+                        <td class="text-center align-middle"> <?php echo '<input class="btn btn-danger" type="button" value="Excluir">'; ?></td>
+                    </tr>
+            <?php }
+            }
+            ?>
             </tbody>
           </table>
         </div>
