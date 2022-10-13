@@ -56,7 +56,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="cadastrar.html" class="btn btn-link" aria-current="page">
+                    <a href="cadastrar.php" class="btn btn-link" aria-current="page">
                         <img src="../images/icons/user.png" height="20px" width="20px">
                         Perfil
                     </a>

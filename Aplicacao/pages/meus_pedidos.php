@@ -65,7 +65,7 @@
   </div>
 
     <div class="container-fluid mt-5">
-        <form>
+        <form action="../source/update_pedido.php" method="POST">
             <div class="form-group">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-md-4">
@@ -98,6 +98,11 @@
                             <option value="2">Selecione</option>
                         </select>
                     </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-centers mt-5">
+                <div class="col-mx-auto text-center">
+                    <input type="submit" value="Finalizar" class="btn btn-primary px-5">
                 </div>
             </div>
         </form>

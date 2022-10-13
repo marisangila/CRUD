@@ -79,11 +79,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   if (!empty($lst_product)) {
     foreach ($lst_product as $row) { ?>
-      <div class="row justify-content-center align-items-center">
+    <form action="../source/insert_pedido.php" method="POST">
+    <div class="row justify-content-center align-items-center">
         <div class="col-md-2">
           <?php echo '<img height="200px" width="200px" src="' . $row['imagem_item'] . '">'; ?>
         </div>
         <div class="col-md-4">
+          <?php echo '<p class="text-justify fw-bold" name="pk_item"> Código: ' . $row['pk_item'] . '</p>'; ?>
+
           <?php echo '<p class="text-justify fw-bold"> Nome: ' . $row['nome_item'] . '</p>'; ?>
 
           <?php echo '<p class="text-justify">' . $row['descricao_item'] .  '</p>'; ?>
@@ -98,17 +101,18 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="col-md-6">
           <div class="form-group shadow-textarea">
             <Label>Obervações:</Label>
-            <textarea class="form-control z-depth-1" rows="4" placeholder="Exemplo: remover cebola, alface..."></textarea>
+            <textarea class="form-control z-depth-1" rows="4" placeholder="Exemplo: remover cebola, alface..." name="obs"></textarea>
           </div>
         </div>
         <div class="col-md-1 ">
           <Label>Quantidade:</Label>
-          <input class="form-control w-25" type="number">
+          <input class="form-control w-25" type="number" name="qtd">
         </div>
         <div class="col-md-1 ">
-          <input class="btn btn-primary m-5" type="button" value="Adicionar">
+          <input class="btn btn-primary m-5" type="submit" value="Adicionar">
         </div>
       </div>
+    </form>
   <?php }
   }
   ?>
@@ -123,7 +127,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
       </div>
       <div class="col-md-1">
-        <input class="btn btn-primary m-5" type="button" value="Concluir Pedido">
+        <a href="../source/update_pedido.php"class="btn btn-primary">Concluir Pedido</a>
       </div>
     </div>
   </div>
